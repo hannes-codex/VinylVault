@@ -1,11 +1,16 @@
 import Header from "./components/Header"
 import Dashboard from "./pages/Dashboard"
+import Sidebar from "./components/Sidebar"
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-950">
       <Header />
-      <Dashboard />
+      <div className="flex">
+        <Sidebar />
+        <Dashboard />
+      </div>
+      
     </div>
   )
 }
