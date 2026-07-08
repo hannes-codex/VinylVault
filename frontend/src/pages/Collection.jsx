@@ -27,6 +27,14 @@ function Collection() {
       artist: "Miles Davis",
       year: 1959,
       genre: "Jazz"
+    },
+
+    {
+      id: 4,
+      title: "Trinkt aus, wir müssen gehen!",
+      artist: "Die Toten Hosen",
+      year: 2026,
+      genre: "Rock"
     }
   ]
 
@@ -43,7 +51,7 @@ function Collection() {
 
         {
           albums.map((album) => (
-            <AlbumCard 
+            <AlbumCard
               key={album.id}
               album={album}
             />
