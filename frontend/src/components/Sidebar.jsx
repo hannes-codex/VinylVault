@@ -1,25 +1,45 @@
+import { Link } from "react-router-dom"
+
 function Sidebar() {
   return (
     <aside className="w-64 bg-gray-950 border-r border-gray-800 min-h-screen p-6">
+
       <nav className="space-y-4">
 
-        <div className="text-white font-semibold">
+        <Link 
+          to="/"
+          className="block text-gray-400 hover:text-white"
+        >
           🏠 Dashboard
-        </div>
+        </Link>
 
-        <div className="text-gray-400 hover:text-white cursor-pointer">
+
+        <Link
+          to="/collection"
+          className="block text-gray-400 hover:text-white"
+        >
           💿 Sammlung
-        </div>
+        </Link>
 
-        <div className="text-gray-400 hover:text-white cursor-pointer">
+
+        <Link
+          to="/add"
+          className="block text-gray-400 hover:text-white"
+        >
           ➕ Album hinzufügen
-        </div>
+        </Link>
 
-        <div className="text-gray-400 hover:text-white cursor-pointer">
+
+        <Link
+          to="/stats"
+          className="block text-gray-400 hover:text-white"
+        >
           📊 Statistik
-        </div>
+        </Link>
+
 
       </nav>
+
     </aside>
   )
 }
