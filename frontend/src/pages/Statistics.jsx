@@ -1,6 +1,6 @@
 function Statistics() {
   return (
-    <main className="p-8">
+    <main className="p-8 flex-1">
       <h2 className="text-3xl font-bold text-white">
         📊 Statistik
       </h2>
