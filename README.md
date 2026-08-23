@@ -70,14 +70,22 @@ Getting Started
 
 Prerequisites
 
-- Node.js
-- npm
+- [nvm](https://github.com/nvm-sh/nvm) (Node Version Manager) — works the same way on Linux and macOS
+- npm (comes with Node.js)
+
+This project pins its Node version in `.nvmrc`. Always run `nvm use` (or `nvm install`) inside the project directory before installing dependencies, so Linux and macOS machines stay on the same Node version.
 
 Installation
 
 Clone the repository:
 
 git clone <repository-url>
+cd VinylVault
+
+Install and select the correct Node version:
+
+nvm install
+nvm use
 
 Install dependencies:
 
