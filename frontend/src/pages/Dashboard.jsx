@@ -1,4 +1,20 @@
+import { useEffect, useState } from "react"
+import { getAlbums } from "../lib/api"
+
 function Dashboard() {
+
+  const [albums, setAlbums] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    getAlbums()
+      .then(setAlbums)
+      .finally(() => setLoading(false))
+  }, [])
+
+  const genreCount = new Set(albums.map((album) => album.genre)).size
+  const latest = albums[0]
+
   return (
     <main className="p-8 flex-1">
 
@@ -16,7 +32,7 @@ function Dashboard() {
           </p>
 
           <p className="text-5xl text-white font-bold mt-2">
-            0
+            {loading ? "…" : albums.length}
           </p>
 
           <p className="text-gray-400">
@@ -31,7 +47,7 @@ function Dashboard() {
           </p>
 
           <p className="text-5xl text-white font-bold mt-2">
-            0
+            {loading ? "…" : genreCount}
           </p>
 
           <p className="text-gray-400">
@@ -46,7 +62,7 @@ function Dashboard() {
           </p>
 
           <p className="text-xl text-white font-bold mt-4">
-            Noch keine Einträge
+            {loading ? "…" : latest ? `${latest.title} – ${latest.artist}` : "Noch keine Einträge"}
           </p>
         </div>
 

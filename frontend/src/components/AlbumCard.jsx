@@ -1,4 +1,4 @@
-function AlbumCard({ album }) {
+function AlbumCard({ album, onDelete }) {
   return (
     <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
 
@@ -11,9 +11,25 @@ function AlbumCard({ album }) {
 
       <div className="p-5">
 
-        <h3 className="text-xl font-bold text-white">
-          {album.title}
-        </h3>
+        <div className="flex items-start justify-between gap-2">
+
+          <h3 className="text-xl font-bold text-white">
+            {album.title}
+          </h3>
+
+          {
+            onDelete && (
+              <button
+                onClick={() => onDelete(album.id)}
+                className="text-gray-500 hover:text-red-400 shrink-0"
+                aria-label={`${album.title} entfernen`}
+              >
+                🗑️
+              </button>
+            )
+          }
+
+        </div>
 
 
         <p className="text-gray-400 mt-1">
