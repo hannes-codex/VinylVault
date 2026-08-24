@@ -96,6 +96,25 @@ Start the development server:
 
 npm run dev
 
+Backend
+
+The API lives in a separate `backend` folder (Node.js + Express + Prisma + SQLite).
+
+cd backend
+npm install
+cp .env.example .env
+npm run prisma:migrate
+npm run dev
+
+The API listens on `http://localhost:3001` by default. Endpoints:
+
+- `GET /api/health`
+- `GET /api/albums`
+- `GET /api/albums/:id`
+- `POST /api/albums`
+- `PUT /api/albums/:id`
+- `DELETE /api/albums/:id`
+
 License
 
 This project is for personal use and learning purposes.
