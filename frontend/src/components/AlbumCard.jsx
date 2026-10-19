@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function AlbumCard({ album, onDelete }) {
   return (
     <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
@@ -17,17 +19,29 @@ function AlbumCard({ album, onDelete }) {
             {album.title}
           </h3>
 
-          {
-            onDelete && (
-              <button
-                onClick={() => onDelete(album.id)}
-                className="text-gray-500 hover:text-red-400 shrink-0"
-                aria-label={`${album.title} entfernen`}
-              >
-                🗑️
-              </button>
-            )
-          }
+          <div className="flex items-center gap-2 shrink-0">
+
+            <Link
+              to={`/albums/${album.id}/edit`}
+              className="text-gray-500 hover:text-indigo-400"
+              aria-label={`${album.title} bearbeiten`}
+            >
+              ✏️
+            </Link>
+
+            {
+              onDelete && (
+                <button
+                  onClick={() => onDelete(album.id)}
+                  className="text-gray-500 hover:text-red-400"
+                  aria-label={`${album.title} entfernen`}
+                >
+                  🗑️
+                </button>
+              )
+            }
+
+          </div>
 
         </div>
 

@@ -19,9 +19,20 @@ export function getAlbums() {
   return request("/albums")
 }
 
+export function getAlbum(id) {
+  return request(`/albums/${id}`)
+}
+
 export function createAlbum(album) {
   return request("/albums", {
     method: "POST",
+    body: JSON.stringify(album),
+  })
+}
+
+export function updateAlbum(id, album) {
+  return request(`/albums/${id}`, {
+    method: "PUT",
     body: JSON.stringify(album),
   })
 }

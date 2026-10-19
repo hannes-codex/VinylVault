@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar"
 import Dashboard from "./pages/Dashboard"
 import Collection from "./pages/Collection"
 import AddAlbum from "./pages/AddAlbum"
+import EditAlbum from "./pages/EditAlbum"
 import Statistics from "./pages/Statistics"
 
 
@@ -30,6 +31,8 @@ function App() {
             <Route path="/collection" element={<Collection />} />
 
             <Route path="/add" element={<AddAlbum />} />
+
+            <Route path="/albums/:id/edit" element={<EditAlbum />} />
 
             <Route path="/stats" element={<Statistics />} />
 
