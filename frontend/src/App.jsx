@@ -8,6 +8,7 @@ import Collection from "./pages/Collection"
 import AddAlbum from "./pages/AddAlbum"
 import EditAlbum from "./pages/EditAlbum"
 import Statistics from "./pages/Statistics"
+import NotFound from "./pages/NotFound"
 
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
             <Route path="/albums/:id/edit" element={<EditAlbum />} />
 
             <Route path="/stats" element={<Statistics />} />
+
+            <Route path="*" element={<NotFound />} />
 
           </Routes>
 
