@@ -51,6 +51,19 @@ function AlbumForm({ form, error, submitting, submitLabel, onChange, onSubmit })
         />
       </div>
 
+      <div>
+        <label className="block text-gray-400 mb-1" htmlFor="coverUrl">Cover-URL (optional)</label>
+        <input
+          id="coverUrl"
+          name="coverUrl"
+          type="url"
+          value={form.coverUrl}
+          onChange={onChange}
+          placeholder="https://…"
+          className="w-full rounded-lg bg-gray-800 text-white px-4 py-2 outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+
       {
         error && (
           <p className="text-red-400">⚠️ {error}</p>

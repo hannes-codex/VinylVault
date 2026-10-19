@@ -1,13 +1,27 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 
 function AlbumCard({ album, onDelete }) {
+  const [imageFailed, setImageFailed] = useState(false)
+
   return (
     <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
 
       <div className="h-64 bg-gray-700 flex items-center justify-center">
-        <span className="text-6xl">
-          💿
-        </span>
+        {
+          album.coverUrl && !imageFailed ? (
+            <img
+              src={album.coverUrl}
+              alt={`Cover von ${album.title}`}
+              className="h-full w-full object-cover"
+              onError={() => setImageFailed(true)}
+            />
+          ) : (
+            <span className="text-6xl">
+              💿
+            </span>
+          )
+        }
       </div>
 
 

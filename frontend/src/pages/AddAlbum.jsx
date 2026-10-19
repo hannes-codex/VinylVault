@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import AlbumForm from "../components/AlbumForm"
 import { createAlbum } from "../lib/api"
 
-const initialForm = { title: "", artist: "", year: "", genre: "" }
+const initialForm = { title: "", artist: "", year: "", genre: "", coverUrl: "" }
 
 function AddAlbum() {
 

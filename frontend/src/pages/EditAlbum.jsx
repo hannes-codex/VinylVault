@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import AlbumForm from "../components/AlbumForm"
 import { getAlbum, updateAlbum } from "../lib/api"
 
-const initialForm = { title: "", artist: "", year: "", genre: "" }
+const initialForm = { title: "", artist: "", year: "", genre: "", coverUrl: "" }
 
 function EditAlbum() {
 
@@ -21,6 +21,7 @@ function EditAlbum() {
         artist: album.artist,
         year: album.year,
         genre: album.genre,
+        coverUrl: album.coverUrl || "",
       }))
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false))
